@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sangat.org — Sikh Events Calendar</title>
+<meta name="description" content="A community-run calendar of Sikh events across the US, at sangat.org — parades, conferences, galas, and observances, all in one place.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a href="#" class="logo">
+    <svg width="28" height="28" viewBox="0 0 30 30" aria-hidden="true"><circle cx="12" cy="15" r="9" fill="#D9822B" opacity="0.9"></circle><circle cx="19" cy="15" r="9" fill="#1F4B4C" opacity="0.85"></circle></svg>
+    <span>Sangat.org</span>
+  </a>
+  <nav class="nav">
+    <a href="#events">Events</a>
+    <a href="#about">About</a>
+    <a class="btn-outline" href="mailto:hello@sangat.org?subject=New%20event%20submission">Submit an event</a>
+  </nav>
+  <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg>
+  </button>
+</header>
+
+<nav id="mobile-nav" class="mobile-nav" hidden>
+  <a href="#events">Events</a>
+  <a href="#about">About</a>
+  <a href="mailto:hello@sangat.org?subject=New%20event%20submission">Submit an event</a>
+</nav>
+
+<main>
+  <section class="hero">
+    <h1>Every Sikh gathering,<br>one calendar.</h1>
+    <p>From nagar kirtans and Gurpurabs to tech meetups, galas, and collegiate conferences — track what's happening across the sangat, sourced from the organizations doing the work.</p>
+
+    <form class="search-form" role="search" id="search-form">
+      <label for="site-search" class="visually-hidden">Search events by city, organization, or name</label>
+      <input id="site-search" type="search" placeholder="Search by city, organization, or event">
+      <button type="submit">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        Search
+      </button>
+    </form>
+
+    <div class="stats" id="stats">
+      <div><span class="stat-num" id="stat-events">—</span><span class="stat-label">events tracked</span></div>
+      <div><span class="stat-num" id="stat-orgs">—</span><span class="stat-label">organizations followed</span></div>
+      <div><span class="stat-num">Weekly</span><span class="stat-label">calendar refresh</span></div>
+    </div>
+  </section>
+
+  <section class="filters" aria-label="Filter events by category">
+    <div class="chip-row" id="chip-row">
+      <!-- chips injected by script.js -->
+    </div>
+  </section>
+
+  <section class="events" id="events">
+    <h2 class="section-label">Upcoming</h2>
+    <div id="event-list" class="event-list" aria-live="polite">
+      <p class="loading">Loading events…</p>
+    </div>
+    <p id="empty-state" class="empty-state" hidden>No events match those filters yet — try clearing your search or picking a different category.</p>
+  </section>
+
+  <section class="cta">
+    <div>
+      <h2>Running a Sikh event we're missing?</h2>
+      <p>Most community events only live on Instagram or in group chats — help us keep the calendar honest.</p>
+    </div>
+    <a class="btn-solid" href="mailto:hello@sangat.org?subject=New%20event%20submission">Submit an event</a>
+  </section>
+</main>
+
+<footer class="site-footer" id="about">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="logo">
+        <svg width="22" height="22" viewBox="0 0 30 30" aria-hidden="true"><circle cx="12" cy="15" r="9" fill="#D9822B" opacity="0.9"></circle><circle cx="19" cy="15" r="9" fill="#1F4B4C" opacity="0.85"></circle></svg>
+        <span>Sangat.org</span>
+      </div>
+      <p>An independent, community-run calendar. Not affiliated with any single gurdwara or organization. Event details are sourced from public listings — always confirm with the organizer before making plans.</p>
+    </div>
+    <div class="footer-links">
+      <div>
+        <span class="footer-heading">About</span>
+        <a href="#">How we source events</a>
+        <a href="mailto:hello@sangat.org">Contact us</a>
+      </div>
+      <div>
+        <span class="footer-heading">Follow</span>
+        <a href="#">Instagram</a>
+        <a href="#">Weekly email</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="year"></span> Sangat.org.</span>
+    <span id="last-updated"></span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
